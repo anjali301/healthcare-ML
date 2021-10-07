@@ -17,11 +17,36 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def heart(request):
-    return render(request, 'heart/heart.html')
+def faq(request):
+    return render(request, 'faq.html')
 
-def diabetes(request):
-    return render(request, 'diabetes/diabetes.html')
+def Hpredict(request):
+    return render(request, 'heart/Hpredict.html')
 
-def parkinson(request):
-    return render(request, 'parkinson/parkinson.html')
+def Habout(request):
+    return render(request, 'heart/Habout.html')
+
+def Hexercise(request):
+    return render(request, 'heart/Hexercise.html')
+
+def Ppredict(request):
+    return render(request, 'parkinson/Ppredict.html')
+
+def Pabout(request):
+    return render(request, 'parkinson/Pabout.html')
+
+def Pexercise(request):
+    return render(request, 'parkinson/Pexercise.html')
+
+def Dpredict(request):
+    return render(request, 'diabetes/Dpredict.html')
+
+def Dabout(request):
+    return render(request, 'diabetes/Dabout.html')
+
+def Dexercise(request):
+    return render(request, 'diabetes/Dexercise.html')
+
+
+
+

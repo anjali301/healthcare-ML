@@ -1,28 +1,55 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}">Logo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item active pl-3">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+      <li class="nav-item active pl-3">
+        <a class="nav-link" href="{% url 'about' %}">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+      <li class="nav-item active pl-3">
+        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+      <li class="nav-item active pl-3">
+        <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto mr-3 pr-5">
+      <li class="nav-item dropdown pr-4">
+        <a class="nav-link dropdown-toggle" href="{% url 'heart_predict' %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Heart
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{% url 'heart_predict' %}">Predict</a>
+          <a class="dropdown-item" href="{% url 'heart_exercise' %}">Exercise to follow</a>
+          <a class="dropdown-item" href="{% url 'heart_about' %}">About disease</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown pr-4">
+        <a class="nav-link dropdown-toggle" href="{% url 'diabetes_predict' %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Diabetes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'diabetes_predict' %}">Predict</a>
+          <a class="dropdown-item" href="{% url 'diabetes_exercise' %}">Exercise to follow</a>
+          <a class="dropdown-item" href="{% url 'diabetes_about' %}">About disease</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'parkinson_predict' %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Parkinson
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'parkinson_predict' %}">Predict</a>
+          <a class="dropdown-item" href="{% url 'parkinson_exercise' %}">Exercise to follow</a>
+          <a class="dropdown-item" href="{% url 'parkinson_about' %}">About disease</a>
         </div>
       </li>
     </ul>
