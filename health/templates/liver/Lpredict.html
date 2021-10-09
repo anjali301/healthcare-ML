@@ -1,11 +1,11 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 {% csrf_token %}
-<div class="liverForm container">
+<div class="container">
     <h1>Predict your Chance of Having a Liver Disease</h1>
     <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting liver
         disease based on those values.</h6>
-  <form class="container-fluid" action="">
+  <form action="">
       <label for="age">Age: &nbsp;</label>
       <input type="text" id="age" name="age" /><br>
 
