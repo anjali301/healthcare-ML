@@ -1,5 +1,40 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<h1>predict</h1>
+<div class="container" , class="form-group">
+    <h1>Predict your Chance of Having a Heart Disease</h1>
+    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart 
+        disease based on those values.</h6>
+
+    <form action = "/result" method = "POST">
+        <label for="age"> Age  </label>
+        <input type="text", id="age" name="age">
+        <br>
+        <label for="sex"> Sex (1:male, 0:female)</label>
+        <input type="text", id="sex" name="sex">
+        <br>
+        <label for="chest pain type"> Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic) </label>
+        <input type="text", id="chest pain type" name="chest pain type">
+        <br>
+        <label for="trestbps"> Resting blood pressure (94 - 200 mmHg) </label>
+        <input type="text", id="trestbps" name="trestbps">
+        <br>
+        <label for="chol"> Cholestrol in mg/dl </label>
+        <input type="text", id="chol" name="chol">
+        <br>
+        <label for="fbs"> Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false) </label>
+        <input type="text", id="fbs" name="fbs">
+        <br>
+        <label for="thalach"> Maximum heart rate achieved (71 - 202)</label>
+        <input type="text", id="thalach" name="thalach">
+        <br>
+        <label for="ca"> Number of major vessels (0 - 3) </label>
+        <input type="text", id="ca" name="ca">
+        <br>
+        <label for="thal"> Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect) </label>
+        <input type="text", id="thal" name="thal">
+
+    </form>
+    <button>Predict</button>
+</div>
 {% endblock %}
