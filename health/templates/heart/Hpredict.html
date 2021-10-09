@@ -1,11 +1,12 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<div class="container" , class="form-group">
+<div class="container">
     <h1>Predict your Chance of Having a Heart Disease</h1>
     <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart 
         disease based on those values.</h6>
 
+        {% csrf_token %}
     <form action = "/result" method = "POST">
         <label for="age"> Age  </label>
         <input type="text", id="age" name="age">
