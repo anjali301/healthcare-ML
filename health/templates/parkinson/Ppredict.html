@@ -1,5 +1,44 @@
-{% extends 'main.html' %}
-{% load static %}
-{% block content %}
-<h1>predict</h1>
+{% extends 'main.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% csrf_token %}
+<div class="parkForm">
+  <form class="container-fluid" action="">
+    <div class="form-group">
+      <label for="avg">Average vocal frequency</label>
+      <input
+        type="text"
+        class="form-control"
+        id="avg"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="high">Highest vocal frequency</label>
+      <input
+        type="text"
+        class="form-control"
+        id="high"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="low">Lowest vocal frequency</label>
+      <input
+        type="text"
+        class="form-control"
+        id="low"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="jitter">Jitter (in percentage)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="jitter"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 {% endblock %}
