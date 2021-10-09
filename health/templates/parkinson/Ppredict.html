@@ -1,43 +1,40 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 {% csrf_token %}
-<div class="parkForm">
+<div class="liverForm container">
+    <h1>Predict your Chance of Having a Liver Disease</h1>
+    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting liver
+        disease based on those values.</h6>
   <form class="container-fluid" action="">
-    <div class="form-group">
-      <label for="avg">Average vocal frequency</label>
-      <input
-        type="text"
-        class="form-control"
-        id="avg"
-      />
-    </div>
-    
-    <div class="form-group">
-      <label for="high">Highest vocal frequency</label>
-      <input
-        type="text"
-        class="form-control"
-        id="high"
-      />
-    </div>
+      <label for="age">Age: &nbsp;</label>
+      <input type="text" id="age" name="age" /><br>
 
-    <div class="form-group">
-      <label for="low">Lowest vocal frequency</label>
-      <input
-        type="text"
-        class="form-control"
-        id="low"
-      />
-    </div>
+      <label for="gender">Gender (1 for male 0 for female): &nbsp;</label>
+      <input type="number" id="gender" name="gender" /><br>
 
-    <div class="form-group">
-      <label for="jitter">Jitter (in percentage)</label>
-      <input
-        type="number"
-        class="form-control"
-        id="jitter"
-      />
-    </div>
+      <label for="tot_bil">Total Bilirubin: &nbsp;</label>
+      <input type="number" id="tot_bil" name="tot_bil" /><br>
+
+      <label for="dir_bil">Direct Bilirubin: &nbsp;</label>
+      <input type="number" id="dir_bil" name="dir_bil" /><br>
+
+      <label for="alk_phos">Alkaline phosphatase: &nbsp;</label>
+      <input type="number" id="alk_phos" name="alk_phos" /><br>
+
+      <label for="sgpt">SGPT: &nbsp;</label>
+      <input type="number" id="sgpt" name="sgpt" /><br>
+
+      <label for="sgot">SGOT: &nbsp;</label>
+      <input type="number" id="sgot" name="sgot" /><br>
+
+      <label for="tot_prot">Total Proteins: &nbsp;</label>
+      <input type="number" id="tot_prot" name="tot_prot" /><br>
+
+      <label for="albumin">Albumin: &nbsp;</label>
+      <input type="number" id="albumin" name="albumin " /><br>
+
+      <label for="alb_glob_ratio">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
+      <input type="number" id="alb_glob_ratio" name="alb_glob_ratio" /><br>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
