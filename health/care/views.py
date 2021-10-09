@@ -29,14 +29,14 @@ def Habout(request):
 def Hexercise(request):
     return render(request, 'heart/Hexercise.html')
 
-def Ppredict(request):
-    return render(request, 'parkinson/Ppredict.html')
+def Lpredict(request):
+    return render(request, 'liver/Lpredict.html')
 
-def Pabout(request):
-    return render(request, 'parkinson/Pabout.html')
+def Labout(request):
+    return render(request, 'liver/Labout.html')
 
-def Pexercise(request):
-    return render(request, 'parkinson/Pexercise.html')
+def Lexercise(request):
+    return render(request, 'liver/Lexercise.html')
 
 def Dpredict(request):
     return render(request, 'diabetes/Dpredict.html')
