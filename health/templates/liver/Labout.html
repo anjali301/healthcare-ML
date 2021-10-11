@@ -1,18 +1,27 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<div id="donate"></div>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<div id="liver"></div>
     <div id="nav"></div>
     <div class="maincontent container-fluid">
       <section>
         <div class="row mb-4">
-          <div class="col-md-6 ps-1">
-            <img class="img1" src="" alt="doctors" />
+          <div class="col-md-5 ps-1">
+            <img class="img1" src="{% static 'img/liver.jpg' %}" alt="liver" />
           </div>
-          <div class="col-md-6">
-            <h1 class="donate display-3">Liver Diseases</h1>
-            <p class="descDonate">
-              
+          <div class="col-md-7">
+            <h1 class="liv display-3 text-center">Liver Disease</h1>
+            <p class="descLiv">
+              Your liver does a lot of things that keep you healthy. It turns nutrients 
+              into chemicals your body needs. It filters out poisons. It helps turn food 
+              into energy. So when your liver doesn’t work well, that can affect your whole 
+              body. Different things can cause serious liver conditions. You’ll want to 
+              know about the top causes. <b>Alcohol-Related Liver Disease</b> is caused 
+              by damage to the liver from years of excessive drinking. Years of alcohol 
+              abuse can cause the liver to become inflamed and swollen. This damage can 
+              also cause scarring known as cirrhosis. Cirrhosis is the final stage of 
+              liver disease.
             </p>
           </div>
         </div>
@@ -20,27 +29,49 @@
       <section>
         <div class="row mb-4">
           <div class="col-md-7">
-            <p class="descDonate2">
-              If you have fully recovered from COVID-19, you may be able to help
-              patients currently fighting the infection by donating your plasma.
-              Kindly play a part in this and help those in utmost need. Kindly
-              fill the form below if you want to apply for donating blood and/or
-              plasma.
+            <h1 class="liv display-4 text-center">Symptoms of Liver Disease</h1>
+            <p class="descLiv">
+              The symptoms of Liver disease include: <br><br>
+              <div class="row">
+                  <div class="col-md-6">
+                    <ul class="descLiv">
+                        <li>Nausea</li>
+                        <li>Jaundice</li>
+                        <li>Fatigue</li>
+                        <li>Abdominal Discomfort</li>
+                        <li>Increased thirst</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <ul class="descLiv">
+                          <li>Drastic skin colour change</li>
+                          <li>Fainting</li>
+                          <li>Unusual agitation</li>
+                          <li>Mood swings</li>
+                          <li>Bleeding gums</li>
+                      </ul>
+                  </div>
+              </div>
+              <p class="descLiv">
+              Do you feel like you are having more than three or four symptoms?
+              Go to our online tool to predict whether there is a chance of you having
+              the liver disease.
+              </p>
             </p>
             <br>
             <div class="d-flex justify-content-center">
               <a
                 class="but text-center"
-                href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAB7fnyVUNFpQSzY5N1A1OUE5NkcwMlc5MjBPOVE1WC4u"
+                href="{% url 'liver_predict' %}"
               >
-                <button class="btn btn-donate text-center btn-lg btn-primary">
-                  Every Drop Matters
+                <button class="btn btn-liv text-center btn-lg btn-primary">
+                  Predict
                 </button>
               </a>
             </div>
           </div>
           <div class="col-md-5">
-            <img src="" alt="...">
+            <img class="imgSymp" src="{% static 'img/liv_symptoms.jpg' %}" alt="Symptoms of Liver Disease">
           </div>
         </div>
       </section>
