@@ -1,5 +1,48 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<h1>abt</h1>
+<div id="adopt"></div>
+    <div id="nav"></div>
+    <div class="mainContent container-fluid">
+      <section>
+        <div class="row">
+          <div class="col-md-6 ">
+            <img class="pt-4" src="{% static 'img/heart_attack1.jpg' %}" height="110%" width="auto" />
+          </div>
+          <div class="col-md-6">
+            <h1 class="hope pt-4 display-3">Heart Disease</h1>
+            <p class="descHope">
+              In the battle of life and death during this pandemic, many
+              children have lost their parents and close ones. It is our moral
+              duty to give a "<b>Ray of Hope</b>" to these children. Let’s
+              connect them to parents who want to adopt and give them a better
+              life.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="second">
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <p class="container mt-5 pt-5 descHope">
+             <h1 class="hope pt-2 pl-5 ml-5 display-4">Symptoms</h1>
+            </p>
+            <br>
+            <div class="d-flex justify-content-center">
+              <a
+                class="but text-center"
+                href="{% url 'heart_predict' %}"
+              > 
+                <button class="btn btn-hope text-center btn-lg btn-primary">
+                  Predict 
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="" alt="" height="110%" width="auto" />
+          </div>
+        </div>
+      </section>
+    </div>
 {% endblock %}
