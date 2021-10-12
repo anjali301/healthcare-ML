@@ -9,10 +9,19 @@
 }
 
 .img1 {
-    width: 80%;
+    width: 95%;
     height: auto;
 }
 
+.imgHeart {
+    width: 70%;
+    height: auto;
+}
+
+.imgDiabetes {
+    width: 80%;
+    height: auto;
+}
 .imgSymp {
     width: 95%;
     height: auto;
