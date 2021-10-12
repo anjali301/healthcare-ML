@@ -3,6 +3,11 @@
     max-width: 700px;
 }
 
+.livLabel {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-size: 17px;
+}
+
 .img1 {
     width: 80%;
     height: auto;

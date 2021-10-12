@@ -2,42 +2,88 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 {% csrf_token %}
 <div class="container">
-    <h1>Predict your Chance of Having a Liver Disease</h1>
-    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting liver
+    <h1 class="text-center">Predict your Chance of Having a Liver Disease</h1><br>
+    <h6 class="text-center mb-3">Enter the appropriate values of symptoms you face. Get the chances of you contracting liver
         disease based on those values.
       </h6>
+      <br>
         {% csrf_token %}
-  <form action="" method="POST">
-      <label for="age">Age: &nbsp;</label>
-      <input type="text" id="age" name="age" /><br>
+  <form class="container" action="" method="POST">
+    <div class="row mb-3">
+        <label for="age" class="livLabel col-sm-3 col-form-label">Age: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="age" name="age" />
+      </div>
+    </div>
 
-      <label for="gender">Gender (1 for male 0 for female): &nbsp;</label>
-      <input type="number" id="gender" name="gender" /><br>
+    <div class="row mb-3">
+      <label for="gender" class="livLabel col-sm-3 col-form-label">Gender (1 for male 0 for female): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="gender" name="gender" />
+      </div>
+    </div>
 
-      <label for="tot_bil">Total Bilirubin: &nbsp;</label>
-      <input type="number" id="tot_bil" name="tot_bil" /><br>
+    <div class="row mb-3">
+      <label for="tot_bil" class="livLabel col-sm-3 col-form-label">Total Bilirubin: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="tot_bil" name="tot_bil" />
+      </div>
+    </div>
 
-      <label for="dir_bil">Direct Bilirubin: &nbsp;</label>
-      <input type="number" id="dir_bil" name="dir_bil" /><br>
+    <div class="row mb-3">
+      <label for="dir_bil" class="livLabel col-sm-3 col-form-label">Direct Bilirubin: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="dir_bil" name="dir_bil" />
+      </div>
+    </div>
 
-      <label for="alk_phos">Alkaline phosphatase: &nbsp;</label>
-      <input type="number" id="alk_phos" name="alk_phos" /><br>
+    <div class="row mb-3">
+      <label for="alk_phos" class="livLabel col-sm-3 col-form-label">Alkaline phosphatase: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="alk_phos" name="alk_phos" />
+      </div>
+    </div>
 
-      <label for="sgpt">SGPT: &nbsp;</label>
-      <input type="number" id="sgpt" name="sgpt" /><br>
+    <div class="row mb-3">
+      <label for="sgpt" class="livLabel col-sm-3 col-form-label">SGPT: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="sgpt" name="sgpt" />
+      </div>
+    </div>
 
-      <label for="sgot">SGOT: &nbsp;</label>
-      <input type="number" id="sgot" name="sgot" /><br>
+    <div class="row mb-3">
+      <label for="sgot" class="livLabel col-sm-3 col-form-label">SGOT: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="sgot" name="sgot" />
+      </div>
+    </div>
 
-      <label for="tot_prot">Total Proteins: &nbsp;</label>
-      <input type="number" id="tot_prot" name="tot_prot" /><br>
+    <div class="row mb-3">
+      <label for="tot_prot" class="livLabel col-sm-3 col-form-label">Total Proteins: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="tot_prot" name="tot_prot" />
+      </div>
+    </div>
 
-      <label for="albumin">Albumin: &nbsp;</label>
-      <input type="number" id="albumin" name="albumin " /><br>
+    <div class="row mb-3">
+      <label for="albumin" class="livLabel col-sm-3 col-form-label">Albumin: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="albumin" name="albumin" />
+      </div>
+    </div>
 
-      <label for="alb_glob_ratio">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
-      <input type="number" id="alb_glob_ratio" name="alb_glob_ratio" /><br>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <div class="row mb-3">
+      <label for="alb_glob_ratio" class="livLabel col-sm-3 col-form-label">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="number" id="alb_glob_ratio" name="alb_glob_ratio" />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btnPredictLiver btn-lg btn-primary">Predict</button>
+        </div>
+    </div>
+</form>
 </div>
 {% endblock %}
