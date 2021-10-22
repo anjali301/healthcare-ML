@@ -96,6 +96,26 @@ def Dabout(request):
 def Dexercise(request):
     return render(request, 'diabetes/Dexercise.html')
 
+def Hresult(request):
+
+    model = joblib.load('heart (1).sav')
+
+    lis = []
+
+    lis.append(request.GET['age'])
+    lis.append(request.GET['sex'])
+    lis.append(request.GET['cp'])
+    lis.append(request.GET['trestbps'])
+    lis.append(request.GET['chol'])
+    lis.append(request.GET['fbs'])
+    lis.append(request.GET['thalach'])
+    lis.append(request.GET['ca'])
+    lis.append(request.GET['thal'])
+
+    lis_arr = np.asarray(lis)
+    lis1 = lis_arr.reshape(1, -1)
+    final = model.predict(lis1)
+    return render(request, 'heart/Hresult.html', {'final',final })
 
 
 
