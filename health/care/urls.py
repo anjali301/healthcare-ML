@@ -16,5 +16,6 @@ urlpatterns = [
     path('diabetes_predict/', views.Dpredict, name='diabetes_predict'),
     path('diabetes_about/', views.Dabout, name='diabetes_about'),
     path('diabetes_exercise/', views.Dexercise, name='diabetes_exercise'),
+    path('heart_result/', views.Hresult, name= 'heart_result'),
    
 ]

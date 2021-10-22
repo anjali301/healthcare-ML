@@ -6,16 +6,16 @@
     <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart 
         disease based on those values.</h6>
 
+        <form action = "{% url 'heart_result' %}">
         {% csrf_token %}
-    <form action = "/result" method = "POST">
         <label for="age"> Age  </label>
         <input type="text", id="age" name="age">
         <br>
         <label for="sex"> Sex (1:male, 0:female)</label>
         <input type="text", id="sex" name="sex">
         <br>
-        <label for="chest pain type"> Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic) </label>
-        <input type="text", id="chest pain type" name="chest pain type">
+        <label for="cp"> Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic) </label>
+        <input type="text", id="cp" name="cp">
         <br>
         <label for="trestbps"> Resting blood pressure (94 - 200 mmHg) </label>
         <input type="text", id="trestbps" name="trestbps">
@@ -35,7 +35,13 @@
         <label for="thal"> Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect) </label>
         <input type="text", id="thal" name="thal">
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+    
+              <button type="submit" class="btnPredictLiver btn-liv text-center btn-lg btn-primary">
+                Predict
+              </button>
+            </a>
+          </div>
     </form>
 </div>
 {% endblock %}

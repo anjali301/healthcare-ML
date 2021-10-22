@@ -31,6 +31,27 @@ def Habout(request):
 def Hexercise(request):
     return render(request, 'heart/Hexercise.html')
 
+def Hresult(request):
+
+    model = joblib.load('heart (1).sav')
+
+    lis = []
+
+    lis.append(request.GET['age'])
+    lis.append(request.GET['sex'])
+    lis.append(request.GET['cp'])
+    lis.append(request.GET['trestbps'])
+    lis.append(request.GET['chol'])
+    lis.append(request.GET['fbs'])
+    lis.append(request.GET['thalach'])
+    lis.append(request.GET['ca'])
+    lis.append(request.GET['thal'])
+
+    # lis_arr = np.asarray(lis)
+    # lis1 = lis_arr.reshape(1, -1)
+    final = model.predict([lis])
+    return render(request, 'heart/Hresult.html', {'final',final })
+
 def Lpredict(request):
     return render(request, 'liver/Lpredict.html')
 
