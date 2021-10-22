@@ -168,7 +168,7 @@ x_test = scaler.transform(x_test)
 # In[21]:
 
 
-x_train # All values are in the range of -1 to 1.
+# x_train # All values are in the range of -1 to 1.
 
 
 # ## Model Training (Using SVM Model)
@@ -193,8 +193,8 @@ model.fit(x_train, y_train)
 
 
 # Find accuracy score on training data
-y_pred_train = model.predict(x_train)
-training_acc = accuracy_score(y_train, y_pred_train)
+# y_pred_train = model.predict(x_train)
+# training_acc = accuracy_score(y_train, y_pred_train)
 
 
 # In[25]:
@@ -206,8 +206,8 @@ training_acc = accuracy_score(y_train, y_pred_train)
 # In[26]:
 
 
-y_pred_test = model.predict(x_test)
-test_acc = accuracy_score(y_test, y_pred_test)
+# y_pred_test = model.predict(x_test)
+# test_acc = accuracy_score(y_test, y_pred_test)
 
 
 # In[27]:

@@ -12,6 +12,7 @@ urlpatterns = [
     path('liver_predict/', views.Lpredict, name='liver_predict'),
     path('liver_about/', views.Labout, name='liver_about'),
     path('liver_exercise/', views.Lexercise, name='liver_exercise'),
+    path('liver_result/', views.Lresult, name='liver_result'),
     path('diabetes_predict/', views.Dpredict, name='diabetes_predict'),
     path('diabetes_about/', views.Dabout, name='diabetes_about'),
     path('diabetes_exercise/', views.Dexercise, name='diabetes_exercise'),

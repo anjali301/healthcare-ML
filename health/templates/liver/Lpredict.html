@@ -7,81 +7,82 @@
         disease based on those values.
       </h6>
       <br>
-        {% csrf_token %}
-  <form class="container" action="" method="POST">
+  <form class="container" action="{% url 'liver_result' %}">
+    {% csrf_token %}
     <div class="row mb-3">
         <label for="age" class="livLabel col-sm-3 col-form-label">Age: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="age" name="age" />
+        <input class="form-control" type="text" id="age" name="age" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="gender" class="livLabel col-sm-3 col-form-label">Gender (1 for male 0 for female): &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="gender" name="gender" />
+        <input class="form-control" type="text" id="gender" name="gender" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="tot_bil" class="livLabel col-sm-3 col-form-label">Total Bilirubin: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="tot_bil" name="tot_bil" />
+        <input class="form-control" type="text" step="0.01" id="tot_bil" name="tot_bil" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="dir_bil" class="livLabel col-sm-3 col-form-label">Direct Bilirubin: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="dir_bil" name="dir_bil" />
+        <input class="form-control" type="text" step="0.01" id="dir_bil" name="dir_bil" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="alk_phos" class="livLabel col-sm-3 col-form-label">Alkaline phosphatase: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="alk_phos" name="alk_phos" />
+        <input class="form-control" type="text" step="0.01" id="alk_phos" name="alk_phos" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="sgpt" class="livLabel col-sm-3 col-form-label">SGPT: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="sgpt" name="sgpt" />
+        <input class="form-control" type="text" step="0.01" id="sgpt" name="sgpt" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="sgot" class="livLabel col-sm-3 col-form-label">SGOT: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="sgot" name="sgot" />
+        <input class="form-control" type="text" step="0.01" id="sgot" name="sgot" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="tot_prot" class="livLabel col-sm-3 col-form-label">Total Proteins: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="tot_prot" name="tot_prot" />
+        <input class="form-control" type="text" step="0.01" id="tot_prot" name="tot_prot" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="albumin" class="livLabel col-sm-3 col-form-label">Albumin: &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="albumin" name="albumin" />
+        <input class="form-control" type="text" step="0.01" id="albumin" name="albumin" required />
       </div>
     </div>
 
     <div class="row mb-3">
       <label for="alb_glob_ratio" class="livLabel col-sm-3 col-form-label">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
       <div class="col-sm-4">
-        <input class="form-control" type="number" id="alb_glob_ratio" name="alb_glob_ratio" />
+        <input class="form-control" type="text" step="0.01" id="alb_glob_ratio" name="alb_glob_ratio" required />
       </div>
     </div>
 
     <div class="row">
         <div class="col-sm-10 offset-sm-2">
-            <button type="submit" class="btn btnPredictLiver btn-lg btn-primary">Predict</button>
+            <button type="submit" class="btn btnPredictLiver btn-lg btn-primary mb-3">Predict</button>
+            <button type="reset" class="btn btnPredictLiver btn-lg btn-warning mb-3">Clear</button>
         </div>
     </div>
 </form>
