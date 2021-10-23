@@ -14,7 +14,7 @@
 }
 
 .imgHeart {
-    width: 70%;
+    width: 90%;
     height: auto;
 }
 
@@ -40,4 +40,10 @@
 .descLiv {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 20px;
+}
+
+.imgSym{
+    width: 70%;
+    height: auto;
+    float: right;
 }

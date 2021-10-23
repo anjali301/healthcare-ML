@@ -1,47 +1,88 @@
 {% extends 'main.html' %}
 {% load static %}
-{% block content %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% csrf_token %}
 <div class="container">
-    <h1>Predict your Chance of Having a Heart Disease</h1>
-    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart 
-        disease based on those values.</h6>
+    <h1 class="text-center descliv">Predict your Chance of Having a Heart Disease</h1><br>
+    <h6 class="text-center mb-3">Enter the appropriate values of symptoms you face. Get the chances of you contracting heart
+        disease based on those values.
+      </h6>
+      <br>
+  <form class="container" action="{% url 'heart_result' %}">
+    {% csrf_token %}
+    <div class="row mb-3">
+        <label for="age" class="livLabel col-sm-3 col-form-label">Age: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" id="age" name="age" required />
+      </div>
+    </div>
 
-        <form action = "{% url 'heart_result' %}">
-        {% csrf_token %}
-        <label for="age"> Age  </label>
-        <input type="text", id="age" name="age">
-        <br>
-        <label for="sex"> Sex (1:male, 0:female)</label>
-        <input type="text", id="sex" name="sex">
-        <br>
-        <label for="cp"> Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic) </label>
-        <input type="text", id="cp" name="cp">
-        <br>
-        <label for="trestbps"> Resting blood pressure (94 - 200 mmHg) </label>
-        <input type="text", id="trestbps" name="trestbps">
-        <br>
-        <label for="chol"> Cholestrol in mg/dl </label>
-        <input type="text", id="chol" name="chol">
-        <br>
-        <label for="fbs"> Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false) </label>
-        <input type="text", id="fbs" name="fbs">
-        <br>
-        <label for="thalach"> Maximum heart rate achieved (71 - 202)</label>
-        <input type="text", id="thalach" name="thalach">
-        <br>
-        <label for="ca"> Number of major vessels (0 - 3) </label>
-        <input type="text", id="ca" name="ca">
-        <br>
-        <label for="thal"> Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect) </label>
-        <input type="text", id="thal" name="thal">
-        <br>
+    <div class="row mb-3">
+      <label for="sex" class="livLabel col-sm-3 col-form-label">Gender (1 for male 0 for female): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" id="sex" name="sex" required />
+      </div>
+    </div>
 
-    
-              <button type="submit" class="btnPredictLiver btn-liv text-center btn-lg btn-primary">
-                Predict
-              </button>
-            </a>
-          </div>
-    </form>
+    <div class="row mb-3">
+      <label for="cp" class="livLabel col-sm-3 col-form-label">Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="cp" name="cp" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="trestbps" class="livLabel col-sm-3 col-form-label">Resting blood pressure (94 - 200 mmHg): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="trestbps" name="trestbps" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="chol" class="livLabel col-sm-3 col-form-label">Cholestrol in mg/dl: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="chol" name="chol" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="fbs" class="livLabel col-sm-3 col-form-label">Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="fbs" name="fbs" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="thalach" class="livLabel col-sm-3 col-form-label">Maximum heart rate achieved (71 - 202): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="thalach" name="thalach" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="ca" class="livLabel col-sm-3 col-form-label">Number of major vessels (0 - 3): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="ca" name="ca" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="thal" class="livLabel col-sm-3 col-form-label">Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="thal" name="thal" required />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btnPredictLiver btn-lg btn-primary mb-3">Predict</button>
+            <button type="reset" class="btn btnPredictLiver btn-lg btn-warning mb-3">Clear</button>
+        </div>
+    </div>
+</form>
+<div class="col-md-7 ml-7 pl-7">
+  <img class="imgSym" src="{% static 'img\HeartDisease.gif' %}" alt="Symptoms of Heart Disease" />
+</div>
 </div>
 {% endblock %}

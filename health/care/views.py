@@ -111,11 +111,17 @@ def Hresult(request):
     lis.append(request.GET['thalach'])
     lis.append(request.GET['ca'])
     lis.append(request.GET['thal'])
+    print(lis)
 
-    lis_arr = np.asarray(lis)
-    lis1 = lis_arr.reshape(1, -1)
-    final = model.predict(lis1)
-    return render(request, 'heart/Hresult.html', {'final',final })
+    # lis_arr = np.asarray(lis)
+    # lis1 = lis_arr.reshape(1, -1)
+    final = model.predict([lis])
+    res = []
+    if final[0] == 0:
+        res.append("Don't worry! You're healthy!")
+    elif final[0] == 1:
+        res.append("Uh oh! Seems like you're suffering from Heart disease :(")
+    return render(request, 'heart/Hresult.html', {'final': res[0]})
 
 
 
