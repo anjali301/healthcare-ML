@@ -10,70 +10,70 @@
   <form class="container" action="{% url 'liver_result' %}">
     {% csrf_token %}
     <div class="row mb-3">
-        <label for="age" class="livLabel col-sm-3 col-form-label">Age: &nbsp;</label>
+        <label for="age" class="livLabel col-sm-3 col-form-label text-right">Age: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" id="age" name="age" required />
       </div>
     </div>
-
+    
     <div class="row mb-3">
-      <label for="gender" class="livLabel col-sm-3 col-form-label">Gender (1 for male 0 for female): &nbsp;</label>
+      <label for="gender" class="livLabel col-sm-3 col-form-label text-right">Gender (1 for male 0 for female): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" id="gender" name="gender" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="tot_bil" class="livLabel col-sm-3 col-form-label">Total Bilirubin: &nbsp;</label>
+      <label for="tot_bil" class="livLabel col-sm-3 col-form-label text-right">Total Bilirubin: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="tot_bil" name="tot_bil" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="dir_bil" class="livLabel col-sm-3 col-form-label">Direct Bilirubin: &nbsp;</label>
+      <label for="dir_bil" class="livLabel col-sm-3 col-form-label text-right">Direct Bilirubin: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="dir_bil" name="dir_bil" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="alk_phos" class="livLabel col-sm-3 col-form-label">Alkaline phosphatase: &nbsp;</label>
+      <label for="alk_phos" class="livLabel col-sm-3 col-form-label text-right">Alkaline phosphatase: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="alk_phos" name="alk_phos" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="sgpt" class="livLabel col-sm-3 col-form-label">SGPT: &nbsp;</label>
+      <label for="sgpt" class="livLabel col-sm-3 col-form-label text-right">SGPT: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="sgpt" name="sgpt" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="sgot" class="livLabel col-sm-3 col-form-label">SGOT: &nbsp;</label>
+      <label for="sgot" class="livLabel col-sm-3 col-form-label text-right">SGOT: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="sgot" name="sgot" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="tot_prot" class="livLabel col-sm-3 col-form-label">Total Proteins: &nbsp;</label>
+      <label for="tot_prot" class="livLabel col-sm-3 col-form-label text-right">Total Proteins: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="tot_prot" name="tot_prot" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="albumin" class="livLabel col-sm-3 col-form-label">Albumin: &nbsp;</label>
+      <label for="albumin" class="livLabel col-sm-3 col-form-label text-right">Albumin: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="albumin" name="albumin" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="alb_glob_ratio" class="livLabel col-sm-3 col-form-label">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
+      <label for="alb_glob_ratio" class="livLabel col-sm-3 col-form-label text-right">Albumin to Globulin Ratio (Decimal): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="alb_glob_ratio" name="alb_glob_ratio" required />
       </div>
