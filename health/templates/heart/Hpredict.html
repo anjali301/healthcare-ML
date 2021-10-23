@@ -12,63 +12,63 @@
   <form class="container" action="{% url 'heart_result' %}">
     {% csrf_token %}
     <div class="row mb-3">
-        <label for="age" class="livLabel col-sm-3 col-form-label">Age: &nbsp;</label>
+        <label for="age" class="livLabel col-sm-3 col-form-label text-right">Age: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" id="age" name="age" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="sex" class="livLabel col-sm-3 col-form-label">Gender (1 for male 0 for female): &nbsp;</label>
+      <label for="sex" class="livLabel col-sm-3 col-form-label text-right">Gender (1 for male 0 for female): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" id="sex" name="sex" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="cp" class="livLabel col-sm-3 col-form-label">Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic): &nbsp;</label>
+      <label for="cp" class="livLabel col-sm-3 col-form-label text-right">Chest pain type (1:typical angina, 2:atypical angina, 3:non-anginal pain, 4:asymptomatic): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="cp" name="cp" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="trestbps" class="livLabel col-sm-3 col-form-label">Resting blood pressure (94 - 200 mmHg): &nbsp;</label>
+      <label for="trestbps" class="livLabel col-sm-3 col-form-label text-right">Resting blood pressure (94 - 200 mmHg): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="trestbps" name="trestbps" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="chol" class="livLabel col-sm-3 col-form-label">Cholestrol in mg/dl: &nbsp;</label>
+      <label for="chol" class="livLabel col-sm-3 col-form-label text-right">Cholestrol in mg/dl: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="chol" name="chol" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="fbs" class="livLabel col-sm-3 col-form-label">Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false): &nbsp;</label>
+      <label for="fbs" class="livLabel col-sm-3 col-form-label text-right">Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="fbs" name="fbs" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="thalach" class="livLabel col-sm-3 col-form-label">Maximum heart rate achieved (71 - 202): &nbsp;</label>
+      <label for="thalach" class="livLabel col-sm-3 col-form-label text-right">Maximum heart rate achieved (71 - 202): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="thalach" name="thalach" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="ca" class="livLabel col-sm-3 col-form-label">Number of major vessels (0 - 3): &nbsp;</label>
+      <label for="ca" class="livLabel col-sm-3 col-form-label text-right">Number of major vessels (0 - 3): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="ca" name="ca" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="thal" class="livLabel col-sm-3 col-form-label">Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect): &nbsp;</label>
+      <label for="thal" class="livLabel col-sm-3 col-form-label text-right">Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect): &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="thal" name="thal" required />
       </div>
