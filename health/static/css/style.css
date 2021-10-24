@@ -1,7 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Nunito&display=swap');
 .liverForm {
     max-width: 700px;
 }
+
+.nav-link {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 23px;
+    color: rgb(243, 240, 240) !important;
+}
+
+.nav-link.active {
+    font-family: Amaranth !important;
+    font-size: 23px;
+    background-color: #0060de;
+    border-radius: 8px;
+}
+
+.nav-link.dropdown-toggle {
+    font-family: Amaranth !important;
+    font-size: 23px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-link.dropdown-toggle.active {
+    font-family: Amaranth !important;
+    font-size: 23px;
+    background-color: #0060de;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    background-color: #000;
+    color: white;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+.dropdown-menu {
+    background-color: rgb(235, 235, 235);
+    opacity: 0.98;
+    cursor: pointer;
+}
+
+.dropdown-item {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.dropdown-item.active {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    background-color: #2580f7;
+    color: white;
+}
+
+.dropdown-item:hover {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    background-color: #2580f7;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
 
 .livLabel {
     font-family: 'IBM Plex Sans', sans-serif !important;
@@ -50,5 +115,14 @@
 
 .gifLiv {
     width: 95%;
+    height: auto;
+}
+
+.navbar-brand {
+    margin-right: -40px;
+}
+
+.dis {
+    width: 50%;
     height: auto;
 }
