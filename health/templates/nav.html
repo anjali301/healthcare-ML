@@ -1,8 +1,18 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'home' %}"><img class="dis" src="{% static 'img/diseaseLogo2.png' %}"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="{% url 'home' %}"
+    ><img class="dis" src="{% static 'img/diseaseLogo2.png' %}"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -22,7 +32,13 @@
     </ul>
     <ul class="navbar-nav ml-auto mr-3 pr-5">
       <li class="nav-item dropdown pr-4">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           Heart
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -33,7 +49,13 @@
       </li>
 
       <li class="nav-item dropdown pr-3">
-        <a class="navElement nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a
+          class="navElement nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           Diabetes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -43,8 +65,14 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown pr-5 ">
-        <a class="navElement nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown pr-5">
+        <a
+          class="navElement nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           Liver
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -59,22 +87,20 @@
 
 <script type="text/javascript">
   const currentLocation = location.href;
-  const item = document.getElementsByClassName('nav-link');
-  const item2 = document.getElementsByClassName('dropdown-item');
+  const item = document.getElementsByClassName("nav-link");
+  const item2 = document.getElementsByClassName("dropdown-item");
   const menuLength = item.length;
   const menuLength2 = item2.length;
 
-  for(let i = 0; i < menuLength; i++) {
-    if(item[i].href === currentLocation) {
-      if(item[i].className === "nav-link dropdown-toggle")
+  for (let i = 0; i < menuLength; i++) {
+    if (item[i].href === currentLocation) {
+      if (item[i].className === "nav-link dropdown-toggle")
         item[i].className = "nav-link dropdown-toggle";
-      else
-        item[i].className = "nav-link active";
+      else item[i].className = "nav-link active";
     }
   }
 
-  for(let i = 0; i < menuLength2; i++) {
-    if(item2[i].href === currentLocation)
-      item2[i].className = "dropdown-item active";
+  for (let i = 0; i < menuLength2; i++) {
+    if (item2[i].href === currentLocation) item2[i].className = "dropdown-item active";
   }
 </script>
