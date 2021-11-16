@@ -2,5 +2,43 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<h1>predict</h1>
+{% csrf_token %}
+<div class="container">
+    <h1>Predict your Chance of Having Diabetes.</h1>
+    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting Diabetes 
+        based on those values.</h6>
+
+        <form action = "{% url 'diabetes_result' %}">
+        {% csrf_token %}
+        <label for="Pregnancies"> Pregnancies  </label>
+        <input type="text", id="Pregnancies" name="Pregnancies">
+        <br>
+        <label for="Glucose"> Glucose</label>
+        <input type="text", id="Glucose" name="Glucose">
+        <br>
+        <label for="BloodPressure"> Resting blood pressure (94 - 200 mmHg) </label>
+        <input type="text", id="BloodPressure" name="BloodPressure">
+        <br>
+        <label for="SkinThickness"> Skin Thickness </label>
+        <input type="text", id="SkinThickness" name="SkinThickness">
+        <br>
+        <label for="Insulin"> Insulin </label>
+        <input type="text", id="Insulin" name="Insulin">
+        <br>
+        <label for="BMI"> BMI </label>
+        <input type="text", id="BMI" name="BMI">
+        <br>
+        <label for="DiabetesPedigreeFunction"> Diabetes Pedigree Function</label>
+        <input type="text", id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction">
+        <br>
+        <label for="Age"> Age </label>
+        <input type="text", id="Age" name="Age">
+        <br>
+              <button type="submit" class="btnPredictLiver btn-liv text-center btn-lg btn-primary">
+                Predict
+              </button>
+            </a>
+          </div>
+    </form>
+</div>
 {% endblock %}
