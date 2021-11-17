@@ -124,4 +124,6 @@ def Hresult(request):
     return render(request, 'heart/Hresult.html', {'final': res[0]})
 
 
+def Dresult(request):
+    return render(request, 'diabetes/Dresult.html')
 
