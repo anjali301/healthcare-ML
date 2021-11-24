@@ -1,82 +1,108 @@
-{% extends 'main.html' %}
-{% load static %}
-{% block content %}
+{% extends 'main.html' %} {% load static %} {% block content %}
 <div class="container">
-    <h1>Predict your Chance of Having a Heart Disease.</h1>
-    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart 
-        disease based on those values.</h6><br>
-
-        <form action = "{% url 'heart_result' %}">
-        {% csrf_token %}
-        <div class="row mb-3">
-        <label for="age" class="livLabel col-sm-3 col-form-label text-right">Age: &nbsp;</label>
+  <h1 class="text-center pt-3">Predict your Chance of Having a Heart Disease</h1>
+  <br />
+  <h6 class="text-center mb-3">
+    Enter the appropriate values of symptoms you face. Get the chances of you contracting heart disease
+    based on those values.
+  </h6>
+  <br />
+  <form action="{% url 'heart_result' %}">
+    {% csrf_token %}
+    <div class="row mb-3">
+      <label for="age" class="livLabel col-sm-3 col-form-label text-right">Age: &nbsp;</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" id="age" name="age" required />
       </div>
     </div>
-    
+
     <div class="row mb-3">
-      <label for="gender" class="livLabel col-sm-3 col-form-label text-right">Gender (1 for male 0 for female): &nbsp;</label>
+      <label for="gender" class="livLabel col-sm-3 col-form-label text-right"
+        >Gender (1 for male 0 for female): &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" id="gender" name="gender" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="cp" class="livLabel col-sm-3 col-form-label text-right">Chest pain type (1: Typical Angina, 2: Atypical Angina, 3: Non-anginal pain, 4: Asymptomatic): &nbsp;</label>
+      <label for="cp" class="livLabel col-sm-3 col-form-label text-right"
+        >Chest pain type (1: Typical Angina, 2: Atypical Angina, 3: Non-anginal pain, 4:
+        Asymptomatic): &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="cp" name="cp" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="restbp" class="livLabel col-sm-3 col-form-label text-right">Resting blood pressure (94 - 200 mmHg): &nbsp;</label>
+      <label for="restbp" class="livLabel col-sm-3 col-form-label text-right"
+        >Resting blood pressure (94 - 200 mmHg): &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="restbp" name="restbp" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="chol" class="livLabel col-sm-3 col-form-label text-right">Cholestrol in mg/dl: &nbsp;</label>
+      <label for="chol" class="livLabel col-sm-3 col-form-label text-right"
+        >Cholestrol in mg/dl: &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="chol" name="chol" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="fbs" class="livLabel col-sm-3 col-form-label text-right">Fasting blood sugar  (> 120 mg/dl; 1 = true, 0 = false): &nbsp;</label>
+      <label for="fbs" class="livLabel col-sm-3 col-form-label text-right"
+        >Fasting blood sugar (> 120 mg/dl; 1 = true, 0 = false): &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="fbs" name="fbs" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="max_heart" class="livLabel col-sm-3 col-form-label text-right">Maximum heart rate achieved (71 - 202): &nbsp;</label>
+      <label for="max_heart" class="livLabel col-sm-3 col-form-label text-right"
+        >Maximum heart rate achieved (71 - 202): &nbsp;</label
+      >
       <div class="col-sm-4">
-        <input class="form-control" type="text" step="0.01" id="max_heart" name="max_heart" required />
+        <input
+          class="form-control"
+          type="text"
+          step="0.01"
+          id="max_heart"
+          name="max_heart"
+          required
+        />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="vessels" class="livLabel col-sm-3 col-form-label text-right">Number of major vessels (0 - 3): &nbsp;</label>
+      <label for="vessels" class="livLabel col-sm-3 col-form-label text-right"
+        >Number of major vessels (0 - 3): &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="vessels" name="vessels" required />
       </div>
     </div>
 
     <div class="row mb-3">
-      <label for="thal" class="livLabel col-sm-3 col-form-label text-right">Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect): &nbsp;</label>
+      <label for="thal" class="livLabel col-sm-3 col-form-label text-right"
+        >Thalassemia: A blood disorder (3 = normal; 6 = fixed defect; 7 = reversable defect):
+        &nbsp;</label
+      >
       <div class="col-sm-4">
         <input class="form-control" type="text" step="0.01" id="thal" name="thal" required />
       </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-10 offset-sm-2">
-            <button type="submit" class="btn btnPredictLiver btn-lg btn-primary mb-3">Predict</button>
-            <button type="reset" class="btn btnPredictLiver btn-lg btn-warning mb-3">Clear</button>
-        </div>
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btnPredictLiver btn-lg btn-primary mb-3">Predict</button>
+        <button type="reset" class="btn btnPredictLiver btn-lg btn-warning mb-3">Clear</button>
+      </div>
     </div>
-    </form>
+  </form>
 </div>
 {% endblock %}
