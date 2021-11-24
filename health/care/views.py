@@ -103,7 +103,7 @@ def Dexercise(request):
 
 def Dresult(request):
 
-    model = joblib.load('heart (1).sav')
+    diabetes = joblib.load('diabetes.sav')
 
     lis = []
 
@@ -119,14 +119,10 @@ def Dresult(request):
 
     # lis_arr = np.asarray(lis)
     # lis1 = lis_arr.reshape(1, -1)
-    final = model.predict([lis])
+    final = diabetes.predict([lis])
     res = []
     if final[0] == 0:
         res.append("Don't worry! You're healthy!")
     elif final[0] == 1:
         res.append("Uh oh! Seems like you're suffering from Diabetes :(")
-    return render(request, 'diabetes/Dresult.html', {'final': res[0]})
-
-
-def Dresult(request):
-    return render(request, 'diabetes/Dresult.html')
+    return render(request, 'diabetes/Dresult.html', {'ans': res[0]})
