@@ -2,10 +2,18 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<div class="container"></div>
-<div class="col-md-7 ml-7 pl-7" style="float:right;">
-    <img class="imgSym" src="{% static 'img\HeartDisease.gif.crdownload' %}" alt="Symptoms of Heart Disease" />
-    <h4 style="float:left">Result: {{final}}</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 pt-5 mt-5">
+            <h4>Final Verdict: {{ans}}</h4>
+        </div>
+        <div class="col-md-7">
+            <img class="imgSym" src="{% static 'img\HeartDisease.gif' %}" alt="Symptoms of Heart Disease" />
+        </div>
+    </div>
 </div>
-</div>
+<!-- 
+<div class="container">
+    <h4>Final Verdict: {{ans}}</h4>
+</div> -->
 {% endblock %}

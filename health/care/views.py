@@ -33,24 +33,29 @@ def Hexercise(request):
 
 def Hresult(request):
 
-    model = joblib.load('heart (1).sav')
-
-    lis = []
-
-    lis.append(request.GET['age'])
-    lis.append(request.GET['sex'])
-    lis.append(request.GET['cp'])
-    lis.append(request.GET['trestbps'])
-    lis.append(request.GET['chol'])
-    lis.append(request.GET['fbs'])
-    lis.append(request.GET['thalach'])
-    lis.append(request.GET['ca'])
-    lis.append(request.GET['thal'])
-
-    # lis_arr = np.asarray(lis)
-    # lis1 = lis_arr.reshape(1, -1)
-    final = model.predict([lis])
-    return render(request, 'heart/Hresult.html', {'final',final })
+    heart = joblib.load('heart.sav')
+    val = []
+    
+    val.append(request.GET['age'])
+    val.append(request.GET['gender'])
+    val.append(request.GET['cp'])
+    val.append(request.GET['restbp'])
+    val.append(request.GET['chol'])
+    val.append(request.GET['fbs'])
+    val.append(request.GET['max_heart'])
+    val.append(request.GET['vessels'])
+    val.append(request.GET['thal'])
+    print(val)
+    # val = np.asarray(val)
+    # val = val.reshape(1, -1)
+    # print(val)
+    ans = heart.predict([val])
+    res = []
+    if ans[0] == 0:
+        res.append("Don't worry! You're healthy!")
+    elif ans[0] == 1:
+        res.append("Uh oh! Seems like you're suffering from Heart disease :(")
+    return render(request, 'heart/Hresult.html', {'ans': res[0]})
 
 def Lpredict(request):
     return render(request, 'liver/Lpredict.html')
