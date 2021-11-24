@@ -1,44 +1,78 @@
-{% extends 'main.html' %}
-{% load static %}
-{% block content %}
+{% extends 'main.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 {% csrf_token %}
 <div class="container">
-    <h1>Predict your Chance of Having Diabetes.</h1>
-    <h6>Enter the appropriate values of symptoms you face. Get the chances of you contracting Diabetes 
-        based on those values.</h6>
+    <h1 class="text-center pt-3">Predict your Chance of Having a Diabetes</h1><br>
+    <h6 class="text-center mb-3">Enter the appropriate values of symptoms you face. Get the chances of you contracting Diabetes
+        based on those values.
+      </h6>
+      <br>
+  <form class="container" action="{% url 'diabetes_result' %}">
+    {% csrf_token %}
+    <div class="row mb-3">
+        <label for="Pregnancies" class="livLabel col-sm-3 col-form-label text-right">Pregnancies (Number of times pregnant): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" id="Pregnancies" name="Pregnancies" required />
+      </div>
+    </div>
 
-        <form action = "{% url 'diabetes_result' %}">
-        {% csrf_token %}
-        <label for="Pregnancies"> Pregnancies (Number of times pregnant)  </label>
-        <input type="text", id="Pregnancies" name="Pregnancies">
-        <br>
-        <label for="Glucose"> Glucose (Plasma glucose concentration a 2 hours in an oral glucose tolerance test)</label>
-        <input type="text", id="Glucose" name="Glucose">
-        <br>
-        <label for="BloodPressure"> Diastolic blood pressure (mm Hg) </label>
-        <input type="text", id="BloodPressure" name="BloodPressure">
-        <br>
-        <label for="SkinThickness"> Skin Thickness (Triceps skin fold thickness (mm)) </label>
-        <input type="text", id="SkinThickness" name="SkinThickness">
-        <br>
-        <label for="Insulin"> 2-Hour serum insulin (mu U/ml) </label>
-        <input type="text", id="Insulin" name="Insulin">
-        <br>
-        <label for="BMI"> BMI (weight in kg/(height in m)^2) </label>
-        <input type="text", id="BMI" name="BMI">
-        <br>
-        <label for="DiabetesPedigreeFunction"> Diabetes Pedigree Function</label>
-        <input type="text", id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction">
-        <br>
-        <label for="Age"> Age (years)</label>
-        <input type="text", id="Age" name="Age">
-        <br>
-              <button type="submit" class="btnPredictLiver btn-liv text-center btn-lg btn-primary">
-                Predict
-              </button>
-            </a>
-          </div>
-    </form>
+    <div class="row mb-3">
+      <label for="Glucose" class="livLabel col-sm-3 col-form-label text-right"> Glucose (Plasma glucose concentration a 2 hours in an oral glucose tolerance test): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" id="Glucose" name="Glucose" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="BloodPressure" class="livLabel col-sm-3 col-form-label text-right">Diastolic blood pressure (mm Hg) : &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="BloodPressure" name="BloodPressure" required />
+      </div>
+    </div>
+   
+
+    <div class="row mb-3">
+      <label for="SkinThickness" class="livLabel col-sm-3 col-form-label text-right">Skin Thickness (Triceps skin fold thickness (mm)): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="SkinThickness" name="SkinThickness" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="Insulin" class="livLabel col-sm-3 col-form-label text-right">2-Hour serum insulin (mu U/ml): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="Insulin" name="Insulin" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="BMI" class="livLabel col-sm-3 col-form-label text-right"> BMI (weight in kg/(height in m)^2): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="BMI" name="BMI" required />
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <label for="DiabetesPedigreeFunction" class="livLabel col-sm-3 col-form-label text-right">Diabetes Pedigree Function: &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="Age" class="livLabel col-sm-3 col-form-label text-right">Age (years): &nbsp;</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" step="0.01" id="Age" name="Age" required />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-10 offset-sm-2">
+          <button type="submit" class="btn btnPredictLiver btn-lg btn-primary mb-3">Predict</button>
+          <button type="reset" class="btn btnPredictLiver btn-lg btn-warning mb-3">Clear</button>
+      </div>
+  </div>
+</form>
 </div>
 {% endblock %}
+
