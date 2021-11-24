@@ -2,5 +2,119 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<h1>Exercise</h1>
+<div id="diabetes"></div>
+    <div id="nav"></div>
+    <div class="maincontent container-fluid">
+      <section>
+        <div class="row mt-4 ml-3">
+          <div class="col-md-5 ">
+            <img class="imgDiabetes" src="{% static 'img/diabetes.jpg' %}" alt="heart" />
+          </div>
+          <div class="col-md-7 mb-2">
+            <h1 class="liv display-4 text-center">Diet plan for Diabetes</h1>
+            <p class="descLiv">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="descLiv"><b>Food to eat:</b> </h5>
+                      <ul class="descLiv">
+                          <li>Vegetables:</li>
+                          <li>Green Leafy Vegetables</li>
+                          <li>Brocoli</li>
+                          <li>Spinach</li>
+                          <li>Tomatoes</li>
+                          <li>Sweet Potato</li>
+                          <li>Fruits:</li>
+                          <li>Berries</li>
+                          <li>Avacado</li>
+                          <li>Peaches</li>
+                          <li>Apricots</li>
+                          <li>Apples</li>
+                          <li>Pears</li>
+                          <li>Green Kiwi</li>
+                          <li>Oranges</li>
+                          <li>Other:</li>
+                          <li>plant-based oils, such as olive oil</li>
+                          <li>Eggs</li>
+                          <li>Whole grains</li>
+                          <li>Nuts</li>
+                          <li>Fatty Fish</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="descLiv"><b>Food to avoid:</b> </h5>
+                        <ul class="descLiv">
+                            <li>Sugar-sweetened beverages</li>
+                            <li>Trans fats</li>
+                            <li>White bread, rice, and pasta</li>
+                            <li>Flavored processed food</li>
+                            <li>Sweetened breakfast cereals</li>
+                            <li>Honey, agave nectar, and maple syrup</li>
+                            <li>Dried fruit</li>
+                            <li>Fried food</li>
+                            <li>Canned vegetables with lots of added sodium</li>
+                            <li>Jam & jelly</li>
+                            <li>Regular cheeses</li>
+                            <li>Poultry with skin</li>
+                            <li>Ice cream</li>
+                            <li>Energy Drinks</li>
+                        </ul>
+                    </div>
+                </div>
+                <h5 class="descLiv" ><b>For more information visit the following websites:</b></h5>
+                <ul class="descLiv">
+                    <li> <a href="https://www.healthline.com/health/heart-health/food-eat-avoid">Healthline</a></li>
+                    <li><a href="https://www.medicalnewstoday.com/articles/153998#summary">MedicalNewsToday</a></li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row mb-4">
+          <div class="col-md-7">
+            <h1 class="liv display-4 text-center">Exercise to follow</h1>
+            <p class="descLiv">
+              Be fit to fight: <br><br>
+              <div class="row">
+                  <div class="col-md-6">
+                    <ul class="descLiv">
+                        <li>Walking</li>
+                        <li>Cycling</li>
+                        <li>Swimming</li>
+                        <li>Team sports</li>
+                        <li>Loose Weight</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <ul class="descLiv">
+                        <li>Cycling</li>
+                        <li>Yoga</li>
+                        <li>Swimming</li>
+                          <li>Increase Stamina</li>
+                          <li>Be Active in Physical activities</li>
+                      </ul>
+                  </div>
+              </div>
+              <p class="descLiv">
+            Follow the exercises & enjoy the results:)
+              </p>
+            </p>
+            <br>
+            <div class="d-flex justify-content-center">
+              <a
+                class="but text-center"
+                href="{% url 'diabetes_predict' %}"
+              >
+                <button class="btnPredictLiver btn-liv text-center btn-lg btn-primary">
+                  Predict
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-5 pd-7">
+            <img class="imgSymp" src="{% static 'img/HeartExercise1.gif' %}" alt="Exercising Food">
+          </div>
+        </div>
+      </section>
+    </div>
 {% endblock %}
