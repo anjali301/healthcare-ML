@@ -173,3 +173,13 @@
 .carousel .carousel-indicators li.active {
     background-color: rgb(255, 52, 16);
 }
+
+.hospImg {
+    height: 60%;
+    width: auto;
+}
+
+.abtText {
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}

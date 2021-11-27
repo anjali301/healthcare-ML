@@ -2,5 +2,27 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<h1>about</h1>
-{% endblock %}
+<h2 style = "text-align:center; font-family: 'Ubuntu', sans-serif" >About <span style="color: red">Dis</span><span style="color: blue">Ease</span></h2>
+<br> <br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <img class="hospImg" src="{% static 'img/hospital.gif'%}">
+        </div>
+    <div class="col-md-5">
+    <ul>
+    <li class="abtText">This website makes it easier for general people who want to know their chances of having a particular
+        disease on click of a mouse
+    </li>
+    <br>
+    <li class="abtText">
+        All the information that one possibly might need about a website is provided here along with a
+         model that predicts the chances that he/she has one of the diseases
+    </li>
+    
+<ul>
+</div>
+</div>
+</div>
+
+{% endblock%}
