@@ -142,6 +142,11 @@
     border: 2px 1px solid grey;
 }
 
+.imageSet {
+    max-height: 500px;
+    max-width: 1000px;
+}
+
 .car-item {
     max-height: 500px;
     max-width: auto;
@@ -151,6 +156,7 @@
 .carousel-control-prev-icon, .carousel-control-next-icon {
     height: 50px;
     width: 50px;
+    margin: -30px;
     background-color: rgba(0, 0, 0, 0.4);
     background-size: 80%, 80%;
     border-radius: 30%;
