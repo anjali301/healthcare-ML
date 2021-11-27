@@ -133,3 +133,37 @@
     width: 40%;
     height: auto;
 }
+
+.car-item-container {
+    background: rgba(100, 100, 100, 0.8);
+    background-size: cover;
+    background-blend-mode: overlay;
+    margin-top: 50px;
+    border: 2px 1px solid grey;
+}
+
+.car-item {
+    max-height: 500px;
+    max-width: auto;
+    filter: brightness(50%);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: 80%, 80%;
+    border-radius: 30%;
+    filter: invert(100%);
+}
+
+.carousel-indicators li {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 40%;
+}
+
+.carousel .carousel-indicators li.active {
+    background-color: rgb(255, 52, 16);
+}
