@@ -183,3 +183,9 @@
     font-size: 20px;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
+.chartBox {
+    width: 700px;
+    height: auto;
+    margin-bottom: 10px;
+}
