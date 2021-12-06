@@ -1,74 +1,71 @@
-{% extends 'main.html' %}
-{% load static %}
-{% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-</head>
-<body>
-
-<h4 style = 'text-align: center;'>Please complete and subject the form below for more information</h4>
-
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.">
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.">
-
-    <label for="email">Email Address</label>
-    <input type="text" id="email" name="email" placeholder="Your email address.">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">India</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-  </form>
+{% extends 'main.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+<div class="container-fluid main-container contact">
+  <div class="row">
+    <div class="container align-items-center">
+      <div class="card contactForm">
+        <div class="card-body">
+          <form id="myContactForm" action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="Enter your full name"
+                name="fullName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label" required>Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                aria-describedby="emailHelp"
+                placeholder="name@example.com"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact Number</label>
+              <input
+                type="phone"
+                class="form-control"
+                id="contact"
+                name="phone"
+                placeholder="Enter your contact number"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="suggest" class="form-label">Queries or Suggestions</label>
+              <textarea
+                name="suggest"
+                id="suggest"
+                class="form-control"
+                cols="30"
+                rows="4"
+                placeholder="Anything to ask or say? Write about it here."
+                required
+              ></textarea>
+            </div>
+            <div class="btn-contact">
+              <button type="submit" id="btn-submit" class="btn btn-lg btn-primary">Submit</button>
+              <button class="btn btn-res btn-lg btn-warning" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- <script src="{% static 'js/index.js' %}"></script> -->
 
-</body>
-</html>
 {% endblock %}

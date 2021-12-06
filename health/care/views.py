@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import joblib
 import numpy as np
+from care.models import Contact
 # Create your views here.
 
 def home(request):
@@ -17,6 +18,20 @@ def about(request):
     return render(request, 'about.html')
 
 def contact(request):
+    if request.method == 'POST':
+        print("Submitted")
+        
+        full_name = request.POST['fullName']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        suggest = request.POST['suggest']
+        
+        inst = Contact(full_name=full_name, email=email, phone=phone, suggest=suggest)
+        inst.save()
+        
+        print("Data written to the database")
+        return render(request, 'faq.html')
+        
     return render(request, 'contact.html')
 
 def faq(request):

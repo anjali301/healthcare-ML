@@ -1,0 +1,37 @@
+.contact {
+    background-color: #F8F8F8;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.card.contactForm {
+    max-width: 80%;
+    margin-left: 110px;
+    margin-top: 45px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px lightgrey;
+}
+
+.form-label::after {
+    content: " *";
+    color: red;
+}
+
+.form-label {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.cnt {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-res {
+    margin-left: 10px;
+}
