@@ -30,12 +30,12 @@ def contact(request):
         inst.save()
         
         print("Data written to the database")
-        return render(request, 'faq.html')
+        return render(request, 'redirect.html')
         
     return render(request, 'contact.html')
 
-def faq(request):
-    return render(request, 'faq.html')
+def redirect(request):
+    return render(request, 'redirect.html')
 
 def Hpredict(request):
     return render(request, 'heart/Hpredict.html')
